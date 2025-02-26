@@ -1,0 +1,35 @@
+/* Not Found Page Styling */
+.container {
+    min-height: 100vh;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 30px;
+    width: 30rem;
+  }
+  
+  h2 {
+    font-size: 40px;
+    color: #dc3545; /* Red for error */
+  }
+  
+  .card-text {
+    font-size: 18px;
+    color: #ccc;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 12px 25px;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+  

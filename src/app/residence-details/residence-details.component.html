@@ -1,0 +1,23 @@
+<h3 class="text-center text-warning fw-bold mb-4">Résidence {{resID + 1}}</h3>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-6 d-flex justify-content-center mb-4">
+      <div class="card shadow-lg bg-dark text-light" style="width: 18rem; border-radius: 15px;">
+        <div class="card-body text-center">
+          <img src="{{SelectedRes.image}}" alt="image error" class="rounded img-fluid mb-3" style="max-height: 200px; object-fit: cover;">
+          <h5 class="card-title text-warning">{{SelectedRes.name}}</h5>
+          <p *ngIf="SelectedRes.locationShown" class="card-text">{{SelectedRes.address}}</p>
+          <p class="card-text text-success fw-bold">{{SelectedRes.status}}</p>
+
+          <div class="d-flex justify-content-between mt-4">
+            <a (click)="nextRes()" class="btn btn-warning fw-bold">Next</a>
+            <a (click)="addRes()" class="btn btn-primary fw-bold">Add Residence</a>
+          </div>
+          
+          <a (click)="updateRes(SelectedRes.id)" class="btn btn-outline-light mt-3 fw-bold">Update Residence</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
