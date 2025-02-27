@@ -27,7 +27,9 @@ export class ResidencesComponent implements OnInit {
   } 
 
   ngOnInit(): void {
-    this.residenceService.getResidences().subscribe(residences => this.listResidences = residences);
+    this.residenceService.getResidences().subscribe((data: Residence[]) => {
+      this.listResidences = data;
+    });
     this.listResidencesFiltered = this.listResidences;
     console.log(this.listResidences);
     this.similarAddressesCount = this.commonService.getSameValueOf(this.listResidences, 'address', 'someAddress');
@@ -67,6 +69,12 @@ export class ResidencesComponent implements OnInit {
 
   ListApartments(res : Residence){
     this.router.navigate(['/apartments', res.id]);
+  }
+
+  deleteResidence(id: number): void {
+    this.residenceService.deleteResidence(id).subscribe(() => {
+      this.listResidences = this.listResidences.filter(res => res.id !== id);
+    });
   }
 
 }

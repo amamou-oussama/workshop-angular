@@ -1,14 +1,14 @@
 <div class="d-flex justify-content-center align-items-center min-vh-100">
-  <div class="card p-4 shadow-lg bg-dark text-light" style="width: 50vw; border-radius: 15px;">
+  <div class="card p-4 shadow-lg bg-dark text-light" style="width: 70vw; border-radius: 15px;">
     <div class="card-body">
-      <h4 class="card-title text-center mb-4 text-warning fw-bold">Ajouter une Résidence</h4>
+      <h4 class="card-title text-center mb-4 text-warning fw-bold">Ajouter une r</h4>
 
       <form (ngSubmit)="onFormSubmit()" [formGroup]="residence_data">
         
         <!-- Name Field -->
         <div class="mb-3">
           <label for="name" class="form-label">Nom Résidence</label>
-          <input formControlName="name" type="text" class="form-control input-custom" id="name" placeholder="Nom de la résidence">
+          <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nom de la résidence">
           <div *ngIf="residence_data.get('name')?.invalid && residence_data.get('name')?.touched" class="text-danger mt-1">
             <small *ngIf="residence_data.get('name')?.errors?.['required']">Champ obligatoire.</small>
             <small *ngIf="residence_data.get('name')?.errors?.['minlength']">Minimum 3 caractères.</small>
@@ -18,7 +18,7 @@
         <!-- Address Field -->
         <div class="mb-3">
           <label for="address" class="form-label">Adresse</label>
-          <input formControlName="address" type="text" class="form-control input-custom" id="address" placeholder="Adresse">
+          <input formControlName="address" type="text" class="form-control" id="address" placeholder="Adresse">
           <div *ngIf="residence_data.get('address')?.invalid && residence_data.get('address')?.touched" class="text-danger mt-1">
             <small *ngIf="residence_data.get('address')?.errors?.['required']">Champ obligatoire.</small>
             <small *ngIf="residence_data.get('address')?.errors?.['minlength']">Minimum 5 caractères.</small>
@@ -28,7 +28,7 @@
         <!-- Status Field -->
         <div class="mb-3">
           <label for="status" class="form-label">Statut</label>
-          <select formControlName="status" class="form-control input-custom" id="status">
+          <select formControlName="status" class="form-control" id="status">
             <option value="">Sélectionner un statut</option>
             <option value="Disponible">Disponible</option>
             <option value="Vendu">Vendu</option>
@@ -42,7 +42,7 @@
         <!-- Image Upload -->
         <div class="mb-3">
           <label for="formFile" class="form-label">Image</label>
-          <input class="form-control input-custom" type="file" id="formFile" (change)="onImageChange($event)">
+          <input class="form-control" type="file" id="formFile" (change)="onImageChange($event)">
         </div>
 
         <!-- Add Apartment Modal -->

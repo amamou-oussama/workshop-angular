@@ -22,6 +22,11 @@ export class ResidenceService {
       return of(this.listResidences);
     }
 
+    deleteResidence(id: number): Observable<void> {
+      this.listResidences = this.listResidences.filter(res => res.id !== id);
+      return of();
+    }
+
     addResidence(residence: Residence): void {
       this.listResidences.push(residence);
       this.residencesSubject.next(this.listResidences); // Update the BehaviorSubject to notify subscribers

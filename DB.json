@@ -1,0 +1,28 @@
+{
+  "residences": [
+    {
+      "id": 1,
+      "name": "Résidence A",
+      "location": "Paris"
+    },
+    {
+      "id": 2,
+      "name": "Résidence B",
+      "location": "Lyon"
+    }
+  ],
+  "appartements": [
+    {
+      "id": 1,
+      "residenceId": 1,
+      "number": "101",
+      "size": "50m2"
+    },
+    {
+      "id": 2,
+      "residenceId": 2,
+      "number": "202",
+      "size": "75m2"
+    }
+  ]
+}

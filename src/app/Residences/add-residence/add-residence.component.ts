@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Residence } from 'src/app/core/models/residence';
 import { ResidenceService } from 'src/app/residence.service';
 
@@ -10,6 +11,12 @@ import { ResidenceService } from 'src/app/residence.service';
   styleUrls: ['./add-residence.component.css']
 })
 export class AddResidenceComponent implements OnInit {
+  residence: Residence = {
+    id: 0, name: '', address: '',
+    image: '',
+    status: '',
+    locationShown: false
+  };
   res!: Residence;
   updating = false;
 
@@ -90,6 +97,12 @@ export class AddResidenceComponent implements OnInit {
       console.error("Form is invalid:", this.residence_data.errors);
       console.error("Form data:", this.residence_data.value);
     }
+  }
+
+  addResidence():void{
+    this.residenceService.addResidence(this.residence).subscribe(() => {
+      this.router.navigate(['/residences']);
+    });
   }
   
 
